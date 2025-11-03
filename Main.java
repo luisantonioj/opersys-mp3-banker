@@ -10,7 +10,14 @@ public class Main {
 
         while (true) {
             // Input number of processes
-            n = inputPositiveInt(sc, "Enter number of processes: ");
+            while (true) {
+                n = inputPositiveInt(sc, "Enter number of processes (3-10): ");
+                if (n >= 3 && n <= 10) {
+                    break;
+                } else {
+                    System.out.println("    Error: Number of processes must be between 3 and 10.");
+                }
+            }
 
             processIds = new String[n];
             int[] maxNeed = new int[n];
